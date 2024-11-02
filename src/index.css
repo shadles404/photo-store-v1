@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 min-h-screen;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
+  }
+  
+  .glass-input {
+    @apply bg-white/5 border-white/10 text-white placeholder-white/50 focus:ring-cyan-500 focus:border-cyan-500;
+  }
+
+  .neon-button {
+    @apply relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-500 text-white 
+           shadow-[0_0_15px_rgba(34,211,238,0.5)] transition-all duration-300
+           hover:shadow-[0_0_25px_rgba(34,211,238,0.8)] hover:scale-[1.02];
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)];
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 8s linear infinite;
+}
